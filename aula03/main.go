@@ -32,6 +32,10 @@ func main(){
 	funcao_retorno := test_func4()
 
 	funcao_retorno("Samuel")
+
+	test_func5()
+
+	test_func6("s","sa","sam","samu","samue","samuel")
 }
 
 func test_func()(string, error){
@@ -56,4 +60,16 @@ func test_func4() func(string){
 		fmt.Println("É uma string", valorString)
 	}
 	return funcao_retorno
+}
+
+func test_func5(){
+    func(valorString string){
+		fmt.Println("Não tem nome a função é anonima", valorString)
+	}("Samuel")
+}
+
+func test_func6(valoresString ...string){
+    for _, x := range valoresString{
+		fmt.Println(x)
+	}
 }
